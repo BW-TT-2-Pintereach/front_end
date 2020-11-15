@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react';
+import styled from 'styled-components';
 
 import { axiosDev } from '../utils/axiosDev'; 
+import ArticleCard from './ArticleCard';
+
 
 const ArticleDash = () => {
 
@@ -18,18 +21,18 @@ const ArticleDash = () => {
     return (
         <>
             <h2>Articles !</h2>
-            {
-            articles.map(article => (
-                    <div key={article.id} className="articleCard">
-                        <h3>{article.title}</h3>
-                        <img src={article.image} alt="Cool Shot"/>
-                        <p>{article.summary}</p>
-                    </div>
-                )
-            )
-            }
+            <StyledArticleWrapper>
+                {articles.map(article => <ArticleCard article={article} />)}
+            </StyledArticleWrapper>
         </>
     )
 };
+
+const StyledArticleWrapper = styled.div`
+    display: flex; 
+    justify-content: space-around; 
+    flex-flow: row wrap;
+
+`;
 
 export default ArticleDash; 
