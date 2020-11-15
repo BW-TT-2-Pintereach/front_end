@@ -1,6 +1,4 @@
 # Front End
 
----
-
 ## Features
 
