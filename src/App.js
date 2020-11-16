@@ -1,15 +1,19 @@
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
+
+import Nav from './components/Nav';
+import Authorization from './pages/Authorization';
 import ArticleDash from './components/ArticleDash'; 
 import GlobalStyle from './components/GlobalStyle'; 
 
 function App() {
   return (
     <Router>
+      <GlobalStyle />
+      <Nav />
       <div className="App">
-        <h1>Pintereach</h1>
-        <GlobalStyle />
         <Route exact path="/" component={ArticleDash} />
+        <Route path="/authorization" component={Authorization} />
       </div>
     </Router>
   );
