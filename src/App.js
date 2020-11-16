@@ -1,7 +1,8 @@
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 
-import Nav from './components/Nav'
+import Nav from './components/Nav';
+import Authorization from './pages/Authorization';
 import ArticleDash from './components/ArticleDash'; 
 import GlobalStyle from './components/GlobalStyle'; 
 
@@ -12,6 +13,7 @@ function App() {
       <Nav />
       <div className="App">
         <Route exact path="/" component={ArticleDash} />
+        <Route path="/authorization" component={Authorization} />
       </div>
     </Router>
   );
