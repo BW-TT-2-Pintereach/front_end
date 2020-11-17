@@ -5,6 +5,7 @@ import { useState } from 'react';
 import Nav from './components/Nav';
 import Authorization from './pages/Authorization';
 import ArticleDash from './components/ArticleDash'; 
+import ReadingList from './components/ReadingList';
 import { PrivateRoute } from './components/PrivateRoute';
 
 import { SavedArticleContext } from './context/SavedArticleContext'
@@ -32,6 +33,7 @@ function App() {
         <Nav />
         <Switch>
           <PrivateRoute exact path="/" component={ArticleDash} />
+          <PrivateRoute path="/readinglist" component={ReadingList} />
           <Route path="/authorization" component={Authorization} />
         </Switch>
       </SavedArticleContext.Provider>

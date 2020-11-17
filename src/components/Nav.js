@@ -14,7 +14,7 @@ const Nav = () => {
                 <h2>Pintereach</h2>
                 <div className="navLinkContainer">
                     <NavLink to="/">Home</NavLink>
-                    <NavLink to="#">DashBoard</NavLink>
+                    <NavLink to="/readinglist">Reading List</NavLink>
                     <NavLink to="#">Logout</NavLink>
                 </div>
             </StyledFlex>
