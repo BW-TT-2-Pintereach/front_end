@@ -1,13 +1,19 @@
+import { useContext } from 'react';
 import styled from 'styled-components';
 
+import { SavedArticleContext } from '../context/SavedArticleContext';
+
 const ArticleCard = ({ article }) => {
+
+    const { addToReadingList } = useContext(SavedArticleContext);
+
 
     return (
         <StyledCard key={article.id}>
             <h3>{article.title}</h3>
             <img src={article.image} alt="Cool Shot"/>
             <p>{article.summary}</p>
-            <button>Save Article</button>
+            <button onClick={() => addToReadingList(article)}>Add To Reading List</button>
         </StyledCard>
     )
 }
