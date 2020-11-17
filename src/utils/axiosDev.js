@@ -1,7 +1,7 @@
 import axios from 'axios'; 
 
 export const axiosDev = () => {
-    const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvZXl3aXJlIiwidXNlcklkIjozLCJpYXQiOjE2MDUzMDk3NzAsImV4cCI6MTYwNTMyNzc3MH0.JlQKCXsV6f84hqvh-4GfFiI_teWrv09cGD4s8qAGffo"
+    const token = window.localStorage.getItem('token')
 
     return axios.create({
         headers: {
