@@ -1,4 +1,7 @@
 import { useState } from 'react'; 
+import { useHistory } from 'react-router-dom';
+
+import { axiosDev } from '../utils/axiosDev';
 
 
 const initialInput = { 
@@ -8,6 +11,8 @@ const initialInput = {
 
 const Login = () => {
 
+    const { push } = useHistory("/");
+
     const [ userInput, setUserInput ] = useState(initialInput);
 
     const handleChange = e => {
@@ -16,6 +21,16 @@ const Login = () => {
             [e.target.name]: e.target.value
         });
     };
+
+    const login = e => {
+        e.preventDefault(); 
+        axiosDev().post('/users/login', userInput)
+            .then((res)=> {
+                window.localStorage.setItem('token', res.data.token);
+                push('/');
+            })
+            .catch(err => console.log(err)) // !!! BUILD ERROR HANDLIGN !!!
+    }
 
     return (
         <div className="authForm">
@@ -35,6 +50,7 @@ const Login = () => {
                     value={userInput.password}
                     onChange={handleChange}
                 />
+                <button onClick={login}>Login</button>
             </div>
         </div>
     )
