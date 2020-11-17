@@ -1,5 +1,7 @@
 import { useState } from 'react'; 
 
+import { axiosDev } from '../utils/axiosDev';
+
 
 const initialInput = { 
     username: "", 
@@ -16,6 +18,16 @@ const SignUp = () => {
             [e.target.name]: e.target.value
         });
     };
+
+    const signUp = e => {
+        e.preventDefault();
+        axiosDev().post('/users/signup', userInput)
+            .then(res => {
+                console.log(res);
+            })
+            .catch(err => console.log(err));
+
+    }
 
     return (
         <div className="authForm">
@@ -36,6 +48,7 @@ const SignUp = () => {
                     onChange={handleChange}
                 />
             </div>
+            <button onClick={signUp}>Create Account!</button>
         </div>
     )
 

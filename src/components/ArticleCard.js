@@ -1,7 +1,10 @@
 import styled from 'styled-components';
 
+
+
 const ArticleCard = ({ article }) => {
 
+    
     return (
         <StyledCard key={article.id}>
             <h3>{article.title}</h3>

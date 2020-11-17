@@ -1,6 +1,7 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import styled from 'styled-components';
 
+import { SavedArticleContext } from '../context/SavedArticleContext';
 import { axiosDev } from '../utils/axiosDev'; 
 import ArticleCard from './ArticleCard';
 
@@ -8,6 +9,8 @@ import ArticleCard from './ArticleCard';
 const ArticleDash = () => {
 
     const [articles, setArticles] = useState([]);
+
+    const { addToReadingList } = useContext(SavedArticleContext);
 
     useEffect(() => {
         axiosDev().get('/articles')
@@ -23,7 +26,13 @@ const ArticleDash = () => {
         <>
             <h2>Articles !</h2>
             <StyledArticleWrapper>
-                {articles.map(article => <ArticleCard article={article} />)}
+                {articles.map(article => (
+                    <CardWrapper> 
+                        <ArticleCard article={article} />
+                        <button onClick={() => addToReadingList(article)}> Add To Reading List </button>
+                    </CardWrapper >
+                    ))
+                }
             </StyledArticleWrapper>
         </>
     )
@@ -34,6 +43,11 @@ const StyledArticleWrapper = styled.div`
     justify-content: space-around; 
     flex-flow: row wrap;
 
+`;
+
+const CardWrapper = styled.div`
+    display: flex; 
+    flex-flow: column nowrap;
 `;
 
 export default ArticleDash; 
