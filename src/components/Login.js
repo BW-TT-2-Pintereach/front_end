@@ -27,6 +27,7 @@ const Login = () => {
         axiosDev().post('/users/login', userInput)
             .then((res)=> {
                 window.localStorage.setItem('token', res.data.token);
+                console.log("Success: Lets Move")
                 push('/');
             })
             .catch(err => console.log(err)) // !!! BUILD ERROR HANDLIGN !!!

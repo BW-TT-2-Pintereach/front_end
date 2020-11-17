@@ -11,8 +11,8 @@ function App() {
   return (
     <Router>
       <GlobalStyle />
-      <Nav />
       <div className="App">
+        <Nav />
         <PrivateRoute exact path="/" component={ArticleDash} />
         <Route path="/authorization" component={Authorization} />
       </div>

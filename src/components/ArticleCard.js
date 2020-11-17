@@ -7,6 +7,7 @@ const ArticleCard = ({ article }) => {
             <h3>{article.title}</h3>
             <img src={article.image} alt="Cool Shot"/>
             <p>{article.summary}</p>
+            <button>Save Article</button>
         </StyledCard>
     )
 }

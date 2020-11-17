@@ -1,4 +1,4 @@
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 
@@ -8,7 +8,7 @@ const Nav = () => {
             <StyledFlex>
                 <h2>Pintereach</h2>
                 <div className="navLinkContainer">
-                    <NavLink to="#">Home</NavLink>
+                    <NavLink to="/">Home</NavLink>
                     <NavLink to="#">DashBoard</NavLink>
                     <NavLink to="#">Logout</NavLink>
                 </div>
