@@ -32,7 +32,7 @@ const Nav = () => {
                 onClose={handleClose}
             >
                 <MenuItem component={Link} to='/' onClick={handleClose}>Home</MenuItem>
-                <MenuItem component={Link} to='readinglist' onClick={handleClose}>Reading List</MenuItem>
+                <MenuItem component={Link} to='/readinglist' onClick={handleClose}>Reading List</MenuItem>
 
             </Menu>
         </StyledHeader>

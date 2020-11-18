@@ -26,9 +26,24 @@ function App() {
     )
   }
 
+  const updateArticleRank = (id, rank) => {
+    setSavedArticles(
+      savedArticles.map(article => { 
+        if ( article.id === id){
+          return {...article, rank: rank};
+        }
+        return article;
+      })
+    );
+  }
+
   return (
     <div className="App">
-      <SavedArticleContext.Provider value={{ savedArticles, addToReadingList, removeFromReadingList}} >
+      <SavedArticleContext.Provider value={{ 
+        savedArticles, 
+        addToReadingList, 
+        removeFromReadingList, 
+        updateArticleRank }}>
         <GlobalStyle />
         <Nav />
         <Switch>
