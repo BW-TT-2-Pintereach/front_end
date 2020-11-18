@@ -17,7 +17,7 @@ const Authorization = () => {
         return (
             <StyledAuthContainer>
                 <Login />
-                <div className="authRadioConainer">
+                <div className="authRadioContainer">
                     <label>Need to Create an Account?</label>
                     <input 
                         name="signup"
@@ -31,10 +31,10 @@ const Authorization = () => {
     }
 
     return (
-        <>
+        <StyledAuthContainer>
             <SignUp />
             <button onClick={handleChange}>Back To Login.</button>
-        </>
+        </StyledAuthContainer>
     )
 
 };
@@ -45,6 +45,10 @@ const StyledAuthContainer = styled.div`
     padding: 3% 2%;
     border: 6px solid dodgerblue;
     border-radius: 5px;
+
+    .authRadioContainer {
+        margin: 1% auto 0;
+    }
 `;
 
 export default Authorization; 

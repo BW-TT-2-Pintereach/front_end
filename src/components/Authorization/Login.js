@@ -60,10 +60,6 @@ const Login = () => {
 
 };
 
-const StyledFormContainer = styled.div`
-    width: 50rem;
-    margin: 0 auto;
-`;
 
 const StyledAuthInput = styled.div`
     display: flex; 
