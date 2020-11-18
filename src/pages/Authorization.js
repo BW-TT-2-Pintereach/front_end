@@ -4,6 +4,9 @@ import styled from 'styled-components';
 import Login from '../components/Authorization/Login'
 import SignUp from '../components/Authorization/SignUp';
 
+
+// Consider UX - moving alerts etc. 
+
 const Authorization = () => {
 
     const [ signup, setSignup ] = useState(false); 

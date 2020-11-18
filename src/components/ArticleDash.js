@@ -1,6 +1,7 @@
 import { useState, useEffect, useContext } from 'react';
 import styled from 'styled-components';
 
+
 import { SavedArticleContext } from '../context/SavedArticleContext';
 import { axiosDev } from '../utils/axiosDev'; 
 import ArticleCard from './ArticleCard';
@@ -9,6 +10,7 @@ import ArticleCard from './ArticleCard';
 const ArticleDash = () => {
 
     const [articles, setArticles] = useState([]);
+
 
     const { addToReadingList } = useContext(SavedArticleContext);
 
@@ -20,7 +22,10 @@ const ArticleDash = () => {
             .catch(err => console.log(err));
     }, [])
 
+
     //Need Loading Page - Make a default one and resuse 
+
+    //Going to manage rating through context as I have allredy set it up - more efficent route would have been to use the API for evertyhign, would only need component state for remaining functionality
 
     return (
         <>

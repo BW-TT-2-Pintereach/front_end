@@ -28,7 +28,7 @@ function App() {
 
   return (
     <div className="App">
-      <SavedArticleContext.Provider value={{ savedArticles, addToReadingList, removeFromReadingList}} >
+      <SavedArticleContext.Provider value={{ savedArticles, addToReadingList, removeFromReadingList }} >
         <GlobalStyle />
         <Nav />
         <Switch>

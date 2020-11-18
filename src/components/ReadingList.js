@@ -1,14 +1,17 @@
 import { useContext } from 'react';
 import styled from 'styled-components';
 
+
 import ArticleCard from './ArticleCard';
 import { SavedArticleContext } from '../context/SavedArticleContext'; 
 
 const ReadingList = () => {
 
     const { savedArticles, removeFromReadingList } = useContext(SavedArticleContext); 
-    console.log(savedArticles);
 
+    //Lets us a standard drop down for setting rank 
+    // Get it working with component state first - inpmort saved articles as a local state component 
+        // get it working then look to move functionality to API (Update then re render )
     return ( 
         <>
             <h2>Reading List:</h2>

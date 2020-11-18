@@ -32,7 +32,7 @@ const Login = () => {
                 console.log("Success: Lets Move")
                 push('/');
             })
-            .catch(err => console.log(err)) // !!! BUILD ERROR HANDLIGN !!!
+            .catch(err => alert(err.message)) // !!! BUILD ERROR HANDLIGN !!!
     }
 
     return (
