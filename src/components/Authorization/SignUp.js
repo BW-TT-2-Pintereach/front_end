@@ -1,6 +1,7 @@
 import { useState } from 'react'; 
+import { TextField } from '@material-ui/core';
 
-import { axiosDev } from '../utils/axiosDev';
+import { axiosDev } from '../../utils/axiosDev';
 
 
 const initialInput = { 
@@ -34,14 +35,14 @@ const SignUp = () => {
             <h3>Sign up for a New Account! </h3>
             <div className="inputs">
                 <label>Username:</label>
-                <input 
+                <TextField 
                     type="text"
                     name="username"
                     value={userInput.username}
                     onChange={handleChange}
                 />
                 <label>Password: </label>
-                <input 
+                <TextField 
                     type="text"
                     name="password"
                     value={userInput.password}

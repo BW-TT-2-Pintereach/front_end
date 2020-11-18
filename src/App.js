@@ -9,7 +9,7 @@ import ReadingList from './components/ReadingList';
 import { PrivateRoute } from './components/PrivateRoute';
 
 import { SavedArticleContext } from './context/SavedArticleContext'
-import GlobalStyle from './components/GlobalStyle'; 
+import GlobalStyle from './components/Styles/GlobalStyle'; 
 
 function App() {
 

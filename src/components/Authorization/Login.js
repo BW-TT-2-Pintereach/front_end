@@ -1,7 +1,9 @@
 import { useState } from 'react'; 
 import { useHistory } from 'react-router-dom';
+import { TextField } from '@material-ui/core';
+import styled from 'styled-components';
 
-import { axiosDev } from '../utils/axiosDev';
+import { axiosDev } from '../../utils/axiosDev';
 
 
 const initialInput = { 
@@ -36,26 +38,36 @@ const Login = () => {
     return (
         <div className="authForm">
             <h3>Login: </h3>
-            <div className="inputs">
-                <label>Username:</label>
-                <input 
+            <StyledAuthInput>
+                <TextField 
                     type="text"
                     name="username"
                     value={userInput.username}
                     onChange={handleChange}
+                    placeholder="username"
                 />
-                <label>Password: </label>
-                <input 
+                <TextField 
                     type="text"
                     name="password"
                     value={userInput.password}
                     onChange={handleChange}
+                    placeholder="password"
                 />
                 <button onClick={login}>Login</button>
-            </div>
+            </StyledAuthInput>
         </div>
     )
 
 };
+
+const StyledFormContainer = styled.div`
+    width: 50rem;
+    margin: 0 auto;
+`;
+
+const StyledAuthInput = styled.div`
+    display: flex; 
+    flex-flow: column nowrap;
+`;
 
 export default Login;

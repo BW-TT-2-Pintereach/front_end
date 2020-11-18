@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 
 import { Menu, MenuItem, Button } from '@material-ui/core'
+// import { styled } from '@material-ui/core/styles'
 import styled from 'styled-components';
 
 
@@ -49,6 +50,7 @@ const Nav = () => {
 
     );
 };
+
 
 const StyledHeader = styled.header`
     background: #4492E0; 
@@ -98,6 +100,4 @@ const StyledFlex = styled.div`
     }
 `;
 
-
-// font-family: 'Lobster', cursive;
 export default Nav;

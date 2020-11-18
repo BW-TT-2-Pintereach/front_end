@@ -1,7 +1,8 @@
 import { useState } from 'react';
+import styled from 'styled-components';
 
-import Login from '../components/Login'
-import SignUp from '../components/SignUp';
+import Login from '../components/Authorization/Login'
+import SignUp from '../components/Authorization/SignUp';
 
 const Authorization = () => {
 
@@ -14,7 +15,7 @@ const Authorization = () => {
 
     if (!signup) {
         return (
-            <>
+            <StyledAuthContainer>
                 <Login />
                 <div className="authRadioConainer">
                     <label>Need to Create an Account?</label>
@@ -25,7 +26,7 @@ const Authorization = () => {
                         onChange={handleChange}
                     />
                 </div>
-            </>
+            </StyledAuthContainer>
         )
     }
 
@@ -37,5 +38,13 @@ const Authorization = () => {
     )
 
 };
+
+const StyledAuthContainer = styled.div`
+    width: 25rem;
+    margin: 1rem auto;
+    padding: 3% 2%;
+    border: 6px solid dodgerblue;
+    border-radius: 5px;
+`;
 
 export default Authorization; 
