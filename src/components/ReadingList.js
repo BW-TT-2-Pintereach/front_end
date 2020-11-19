@@ -41,8 +41,7 @@ const ReadingList = () => {
                             <button onClick={e => {
                                 e.preventDefault();
                                 updateArticleRank(article.id, userRank)
-                            }}
-                            >
+                            }}>
                                 Submit
                             </button>
                         </form>
@@ -66,6 +65,8 @@ const StyledArticleWrapper = styled.div`
 const CardWrapper = styled.div`
     display: flex; 
     flex-flow: column nowrap;
+    
+    
 `;
 
 export default ReadingList; 

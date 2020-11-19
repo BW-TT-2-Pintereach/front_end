@@ -29,7 +29,6 @@ const ArticleDash = () => {
 
     return (
         <>
-            <h2>Articles !</h2>
             <StyledArticleWrapper>
                 {articles.map(article => (
                     <CardWrapper> 
@@ -47,12 +46,31 @@ const StyledArticleWrapper = styled.div`
     display: flex; 
     justify-content: space-around; 
     flex-flow: row wrap;
+    margin-top: 3rem;
 
 `;
 
 const CardWrapper = styled.div`
     display: flex; 
     flex-flow: column nowrap;
+    margin-bottom: 3rem;
+
+    button {
+        width: 15rem;
+        margin: auto;
+        padding: 2%;
+        font-weight: bold;
+        font-size: 1rem;
+        background: white; 
+        border: 3px solid #2f2f3a;
+        transition: 1s;
+
+        &:hover {
+            color: white; 
+            background-color: #2f2f3a;
+            border-color: dodgerblue;
+        }
+    }
 `;
 
 export default ArticleDash; 

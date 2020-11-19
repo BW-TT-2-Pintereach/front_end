@@ -8,12 +8,13 @@ const ArticleCard = ({ article }) => {
 
     
     return (
-        <Card key={article.id} style={cardStyle} cover={ <img style={imgStyle} alt="shot" src={article.image} />}>
+        <StyledCard key={article.id} >
             <h3>{article.title}</h3>
+            <img alt="shot" src={article.image} />
             {/* <img src={article.image} alt="Cool Shot"/> */}
             <p>{article.summary}</p>
-            <p>Rank: {article.rank}</p>
-        </Card>
+            <h4>Rank: {article.rank}</h4>
+        </StyledCard>
 
         // <StyledCard key={article.id}>
         //     <h3>{article.title}</h3>
@@ -29,12 +30,25 @@ const StyledCard = styled.div`
     flex-flow: column nowrap;
     border: 4px solid dodgerblue;
     width: 20rem;
+    background: whitesmoke;
+    padding: 2%;
+
+    h3 {
+        text-align: center;
+        margin-bottom: 2%;
+    }
 
     img {
         width: 100%;
-        max-height: 20rem;
+        height: 20rem;
         object-fit: cover;
+        margin-bottom: 1rem;
+    }
 
+    p {
+        font-style: italic;
+        margin: 1% auto;
+        line-height: 1.25rem;
     }
 
 `;
