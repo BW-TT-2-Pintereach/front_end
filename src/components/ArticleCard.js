@@ -1,17 +1,26 @@
 import styled from 'styled-components';
 
+import { Card } from 'antd';
+
 
 
 const ArticleCard = ({ article }) => {
 
     
     return (
-        <StyledCard key={article.id}>
+        <Card key={article.id} style={cardStyle} cover={ <img style={imgStyle} alt="shot" src={article.image} />}>
             <h3>{article.title}</h3>
-            <img src={article.image} alt="Cool Shot"/>
+            {/* <img src={article.image} alt="Cool Shot"/> */}
             <p>{article.summary}</p>
             <p>Rank: {article.rank}</p>
-        </StyledCard>
+        </Card>
+
+        // <StyledCard key={article.id}>
+        //     <h3>{article.title}</h3>
+        //     <img src={article.image} alt="Cool Shot"/>
+        //     <p>{article.summary}</p>
+        //     <p>Rank: {article.rank}</p>
+        // </StyledCard>
     )
 }
 
@@ -29,5 +38,16 @@ const StyledCard = styled.div`
     }
 
 `;
+
+const cardStyle = {
+    // height: "30vh", 
+    width: "20rem", 
+    border: "4px solid dodgerblue",
+}
+
+const imgStyle = {
+    width: "100%", 
+    objectFit: "cover"
+}
 
 export default ArticleCard; 

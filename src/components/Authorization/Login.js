@@ -39,14 +39,16 @@ const Login = () => {
         <div className="authForm">
             <h3>Login: </h3>
             <StyledAuthInput>
-                <TextField 
+                <TextField
+                    className="textField" 
                     type="text"
                     name="username"
                     value={userInput.username}
                     onChange={handleChange}
                     placeholder="username"
                 />
-                <TextField 
+                <TextField
+                    className="textField" 
                     type="text"
                     name="password"
                     value={userInput.password}
@@ -64,6 +66,13 @@ const Login = () => {
 const StyledAuthInput = styled.div`
     display: flex; 
     flex-flow: column nowrap;
+
+    .textField {
+        margin-top: 1rem;
+    }
+
 `;
+
+
 
 export default Login;
