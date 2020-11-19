@@ -37,6 +37,7 @@ const SignUp = () => {
             <div className="inputs">
                 <StyledAuthInput>
                     <TextField 
+                        className="textField"
                         type="text"
                         name="username"
                         value={userInput.username}
@@ -44,15 +45,16 @@ const SignUp = () => {
                         placeholder="username"
                     />
                     <TextField 
+                        className="textField"
                         type="text"
                         name="password"
                         value={userInput.password}
                         onChange={handleChange}
                         placeholder="password"
                     />
+                    <button onClick={signUp}>Create Account!</button>
                 </StyledAuthInput>
             </div>
-            <button onClick={signUp}>Create Account!</button>
         </div>
     )
 
@@ -61,6 +63,10 @@ const SignUp = () => {
 const StyledAuthInput = styled.div`
     display: flex; 
     flex-flow: column nowrap;
+
+    .textField {
+        margin-top: 1rem;
+    }
 `;
 
 export default SignUp;

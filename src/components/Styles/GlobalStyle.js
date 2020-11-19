@@ -5,14 +5,12 @@ const GlobalStyle = createGlobalStyle`
     *{
         margin: 0; 
         padding: 0; 
-        box-sizing: border-box; 
-    }
+        box-sizing: border-box;
+    } 
 
     body { 
         font-family: 'Inter', sans-serif; 
-        width: 95%; 
-        margin: 0 auto; 
-
+        background-color: #2f2f3a;
     }
 
 `;

@@ -18,13 +18,12 @@ const ReadingList = () => {
         setUserRank(e.target.value); 
     }
 
-
     return ( 
         <>
             <h2>Reading List:</h2>
             <StyledArticleWrapper>
                 {savedArticles.map(article => (
-                    <CardWrapper>
+                   <CardWrapper>
                         <ArticleCard article={article} />
                         <button onClick={() => removeFromReadingList(article.id)}>
                             Remove From Reading List
@@ -41,9 +40,11 @@ const ReadingList = () => {
                             </label>
                             <button onClick={e => {
                                 e.preventDefault();
-                                updateArticleRank(article.id, userRank)}}>
+                                updateArticleRank(article.id, userRank)
+                            }}
+                            >
                                 Submit
-                                </button>
+                            </button>
                         </form>
 
                     </CardWrapper>
